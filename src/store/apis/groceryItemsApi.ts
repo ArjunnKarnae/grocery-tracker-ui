@@ -18,7 +18,10 @@ export const groceryItemsApi = createApi({
                 query: () => {
                     return {
                         url: 'grocery-items',
-                        method: 'GET'
+                        method: 'GET',
+                        headers: {
+                            "Authorization": "Bearer " + localStorage.getItem("authToken")
+                        }
                     }
                 }
             }),
@@ -28,7 +31,10 @@ export const groceryItemsApi = createApi({
                     return {
                         url: 'grocery-items',
                         method: 'POST',
-                        body: groceryItem
+                        body: groceryItem,
+                        headers: {
+                            "Authorization": "Bearer " + localStorage.getItem("authToken")
+                        }
                     }
                 }
             }),
@@ -38,7 +44,10 @@ export const groceryItemsApi = createApi({
                     return{
                         url: 'grocery-items',
                         method: 'DELETE',
-                        body: id
+                        body: id,
+                        headers: {
+                            "Authorization": "Bearer " + localStorage.getItem("authToken")
+                        }
                     }
                 }
             }),
@@ -48,7 +57,10 @@ export const groceryItemsApi = createApi({
                     return {
                         url: "grocery-items/update",
                         method: "PUT",
-                        body: groceryItem
+                        body: groceryItem,
+                        headers: {
+                            "Authorization": "Bearer " + localStorage.getItem("authToken")
+                        }
                     }
                 }
             })
