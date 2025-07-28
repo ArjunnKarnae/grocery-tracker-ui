@@ -1,69 +1,67 @@
-# React + TypeScript + Vite
+# Grocery Tracker UI
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This project is the user interface (UI) for a Grocery Tracker application. It is built with modern web technologies, providing a sleek and efficient way to manage your grocery needs.
 
-Currently, two official plugins are available:
+## Technologies Used
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+* **React**: A JavaScript library for building user interfaces.
+* **TypeScript**: A typed superset of JavaScript that compiles to plain JavaScript, enhancing code quality and maintainability.
+* **Vite**: A next-generation frontend tooling that provides an extremely fast development experience with Hot Module Replacement (HMR).
+* **ESLint**: Configured for robust linting, including type-aware and React-specific rules, to ensure code consistency and catch potential errors early.
+* **Zod**: A TypeScript-first schema declaration and validation library, used here for robust data validation, often integrated with form handling.
+* **React Hook Form**: A performant, flexible and extensible forms library for React, simplifying form management and validation.
+* **RTK Query**: A powerful data fetching and caching tool built on top of Redux Toolkit, specifically used for making API calls and managing server state.
 
-## Expanding the ESLint configuration
+## Features
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+Here are the key functionalities available in the Grocery Tracker UI:
 
-```js
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+1.  **User Authentication**:
+    * **New User Signup**: Allows new users to create an account.
+    * **Login Page**: Provides a secure login interface for existing users.
+    * **JWT Security**: The application is secured using JSON Web Tokens (JWT) for authenticated access.
+2.  **Home Page Dashboard**:
+    * Displays a comprehensive list of all added grocery items.
+    * **Category Filtering**: Users can easily filter items based on predefined categories using dedicated buttons.
+    * **Search Functionality**: A search bar is available to filter grocery items by name.
+3.  **Item Management**:
+    * Users have options to **edit** existing grocery item details.
+    * Items can be **deleted** from the list.
+    * An item can be marked as **used**, which automatically reduces its count.
+4.  **Add New Item**:
+    * A prominent button at the bottom of the home screen opens a dedicated form for adding new grocery items to the list.
 
-      // Remove tseslint.configs.recommended and replace with this
-      ...tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      ...tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      ...tseslint.configs.stylisticTypeChecked,
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+## Getting Started
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+To get a local copy up and running, follow these simple steps.
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+### Prerequisites
 
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+Ensure you have [Node.js](https://nodejs.org/) and npm (Node Package Manager) or Yarn installed on your system.
+
+### Installation
+
+1.  **Clone the repository:**
+    ```bash
+    git clone [https://github.com/ArjunnKarnae/grocery-tracker-ui.git](https://github.com/ArjunnKarnae/grocery-tracker-ui.git)
+    ```
+2.  **Navigate to the project directory:**
+    ```bash
+    cd grocery-tracker-ui
+    ```
+3.  **Install dependencies:**
+    ```bash
+    npm install
+    # or if you use Yarn
+    # yarn install
+    ```
+
+### Running the Application
+
+To start the development server:
+
+```bash
+npm run dev
+# or if you use Yarn
+# yarn dev
